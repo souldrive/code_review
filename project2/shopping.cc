@@ -14,7 +14,7 @@ Goods Shopping::GetLastElement() {
 // Print shopping_list_ Elements
 void Shopping::PrintList() {
   for (std::vector<Goods>::iterator i = shopping_list_.begin();
-      i != shopping_list_.end(); i++) {
+      i != shopping_list_.end(); ++i) {
     std::cout << "Goods #" << i->GetIndex() << " - Price : " <<
     i->GetPrice() << std::endl;
   }
@@ -26,8 +26,8 @@ void Shopping::SortByPrice() {
   std::vector<Goods>::iterator p = shopping_list_.begin();
   std::vector<Goods>::iterator min = shopping_list_.end();
   for (std::vector<Goods>::iterator i = shopping_list_.begin();
-      i != shopping_list_.end()-1; i++) {
-    for (std::vector<Goods>::iterator j = i; j != shopping_list_.end(); j++) {
+      i != shopping_list_.end()-1; ++i) {
+    for (std::vector<Goods>::iterator j = i; j != shopping_list_.end(); ++j) {
       if (min == shopping_list_.end()) {
         min = j;
         continue;
@@ -46,8 +46,8 @@ void Shopping::SortByPrice() {
 void Shopping::SortByIndex() {
   std::vector<Goods>::iterator min = shopping_list_.end();
   for (std::vector<Goods>::iterator i = shopping_list_.begin();
-      i != shopping_list_.end()-1; i++) {
-    for (std::vector<Goods>::iterator j = i; j != shopping_list_.end(); j++) {
+      i != shopping_list_.end()-1; ++i) {
+    for (std::vector<Goods>::iterator j = i; j != shopping_list_.end(); ++j) {
       if (min == shopping_list_.end()) {
         min = j;
         continue;
